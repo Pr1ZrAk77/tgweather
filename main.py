@@ -10,7 +10,7 @@ from aiogram.filters.command import Command
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token="7016822341:AAFvIBrx_b5Q5jeTm5fwmB4_lGglKGmwbyY")
+bot = Bot(token="token")
 dp = Dispatcher()
 
 
@@ -23,7 +23,7 @@ async def start_command(message: types.Message):
 async def get_weather(message: types.Message):
     try:
         x = message.text
-        response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={x}&lang=ru&units=metric&appid=19811673e38d7f1d99acfe76f2b0fadc")
+        response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={x}&lang=ru&units=metric&appid=api")
         data = response.json()
         city = data["name"]
         cur_temp = data["main"]["temp"]
